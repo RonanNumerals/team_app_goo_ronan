@@ -44,10 +44,7 @@ class HomePage extends StatelessWidget {
               'Let\'s learn Flutter together.',
               style: TextStyle(fontSize: 16, color: Colors.grey),
             ),
-            SizedBox(height: 20), Text('Created by: Ronan Pelot and Goo Choi'),
-
-            CounterWidget(),
-
+            SizedBox(height: 20), Text('Created by: Ronan Pelot'),
             // --- START OF MY NEW FEATURE ---
             Card(
               elevation: 4,
@@ -72,7 +69,6 @@ class HomePage extends StatelessWidget {
               ),
             ),
             // --- END OF MY NEW FEATURE ---
-          
             ElevatedButton(
               onPressed: () {
                 print('Button Clicked!');
