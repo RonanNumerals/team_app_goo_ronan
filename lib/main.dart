@@ -33,11 +33,22 @@ class HomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // TASK 4: Change the main text below
-            Text(
-              'Welcome to My App!',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            // --- ROUND 3: SCROLLABLE LIST ---
+            SizedBox(
+              height: 200, // We need a fixed height for the list
+              child: ListView.builder(
+                itemCount: 10,
+                itemBuilder: (context, index) {
+                  return ListTile(
+                    leading: Icon(Icons.star, color: Colors.amber),
+                    title: Text('Item ${index + 1}'),
+                    subtitle: Text('Description for item ${index + 1}'),
+                    trailing: Icon(Icons.arrow_forward_ios),
+                  );
+                },
+              ),
             ),
+            // --- END OF ROUND 3 ---
             SizedBox(height: 20), // Adds space between widgets
             // TASK 5: Change the subtitle text
             Text(
