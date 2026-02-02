@@ -45,6 +45,30 @@ class HomePage extends StatelessWidget {
               style: TextStyle(fontSize: 16, color: Colors.grey),
             ),
             SizedBox(height: 20), Text('Created by: Ronan Pelot'),
+            // --- START OF MY NEW FEATURE ---
+            Card(
+              elevation: 4,
+              margin: EdgeInsets.all(16),
+              child: Padding(
+                padding: EdgeInsets.all(16),
+                child: Row(
+                  children: [
+                    Icon(Icons.person, size: 50, color: Colors.blue),
+                    SizedBox(width: 16),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Goo Choi', 
+                          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                        Text('Major: CS', 
+                          style: TextStyle(color: Colors.grey)),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            // --- END OF MY NEW FEATURE ---
             ElevatedButton(
               onPressed: () {
                 print('Button Clicked!');
