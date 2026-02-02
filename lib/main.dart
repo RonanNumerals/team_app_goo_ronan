@@ -44,7 +44,35 @@ class HomePage extends StatelessWidget {
               'Let\'s learn Flutter together.',
               style: TextStyle(fontSize: 16, color: Colors.grey),
             ),
-            SizedBox(height: 20), Text('Created by: Ronan Pelot'),
+            SizedBox(height: 20), Text('Created by: Ronan Pelot and Goo Choi'),
+
+            CounterWidget(),
+
+            // --- START OF MY NEW FEATURE ---
+            Card(
+              elevation: 4,
+              margin: EdgeInsets.all(16),
+              child: Padding(
+                padding: EdgeInsets.all(16),
+                child: Row(
+                  children: [
+                    Icon(Icons.person, size: 50, color: Colors.blue),
+                    SizedBox(width: 16),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Goo Choi', 
+                          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                        Text('Major: CS', 
+                          style: TextStyle(color: Colors.grey)),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            // --- END OF MY NEW FEATURE ---
+          
             ElevatedButton(
               onPressed: () {
                 print('Button Clicked!');
@@ -59,3 +87,37 @@ class HomePage extends StatelessWidget {
     );
   }
 }
+
+// --- START OF SECOND FEATURE ---
+class CounterWidget extends StatefulWidget {
+  @override
+  _CounterWidgetState createState() => _CounterWidgetState();
+}
+
+class _CounterWidgetState extends State<CounterWidget> {
+  int _count = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Text('Count: $_count', style: TextStyle(fontSize: 24)),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              onPressed: () => setState(() => _count--),
+              child: Icon(Icons.remove),
+            ),
+            SizedBox(width: 20),
+            ElevatedButton(
+              onPressed: () => setState(() => _count++),
+              child: Icon(Icons.add),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+}
+// --- END OF SECOND FEATURE ---
