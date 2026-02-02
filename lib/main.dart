@@ -83,3 +83,37 @@ class HomePage extends StatelessWidget {
     );
   }
 }
+
+// --- START OF SECOND FEATURE ---
+class CounterWidget extends StatefulWidget {
+  @override
+  _CounterWidgetState createState() => _CounterWidgetState();
+}
+
+class _CounterWidgetState extends State<CounterWidget> {
+  int _count = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Text('Count: $_count', style: TextStyle(fontSize: 24)),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              onPressed: () => setState(() => _count--),
+              child: Icon(Icons.remove),
+            ),
+            SizedBox(width: 20),
+            ElevatedButton(
+              onPressed: () => setState(() => _count++),
+              child: Icon(Icons.add),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+}
+// --- END OF SECOND FEATURE ---
