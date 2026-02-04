@@ -56,6 +56,9 @@ class HomePage extends StatelessWidget {
               style: TextStyle(fontSize: 16, color: Colors.grey),
             ),
             SizedBox(height: 20), Text('Created by: Ronan Pelot'),
+
+            CounterWidget(),
+
             // --- START OF MY NEW FEATURE ---
             Card(
               elevation: 4,
